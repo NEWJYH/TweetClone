@@ -1,0 +1,49 @@
+00 INTRODUCTION
+  - 00 Welcome
+  - 01 Requirements
+  - 02 What is Firebase
+  - 03 When To Use Firebase
+  - 04 Pricing in Firebase
+
+01 SETUP
+  - 00 React + Firebase Setup
+  - 01 Securing the Keys
+  - 02 Router Setup
+
+02 AUTHENTICATION
+  - 00 Using Firebase Auth
+  - 01 Login Form part One
+  - 02 Recap
+  - 03 Creating Account
+  - 04 Login in
+  - 05 Social Login
+  - 06 Log Out
+
+03 NWEETING
+  - 00 Form and Database Setup
+  - 01 Nweeting
+  - 02 Getting the Nweets
+  - 03 Realtime Nweets
+  - 04 Delete and Update part One
+  - 05 Delete and Update part Two
+  - 06 Recap
+
+04 FILE UPLOAD
+  - 00 Preview Images part One
+  - 01 Preview Images part Two
+  - 02 Uploading
+  - 03 File URL and Nweet
+  - 04 Deleting Files
+
+05 EDIT PROFILE
+  - 00 Get My Own Nweets
+  - 01 Update Profile
+  - 02 Update Profile Bugfix
+
+06 FINISHING UP
+  - 00 Cleaning JS
+  - 01 Styles
+  - 02 Deploying
+  - 03 Security on Firebase
+  - 04 API Key Security
+  - 05 Conclusions
