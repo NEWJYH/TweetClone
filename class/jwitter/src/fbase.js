@@ -1,11 +1,11 @@
 // ref
 // https://firebase.google.com/docs/auth/web/start?hl=ko&authuser=1
-
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-
 // ref getFirestore https://firebase.google.com/docs/firestore/quickstart?hl=ko#web-version-9
 import { getFirestore } from "firebase/firestore";
+// ref https://firebase.google.com/docs/storage/web/upload-files
+import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -24,3 +24,6 @@ export const authService = getAuth(app);
 
 // Initialize Cloud Firestore and get a reference to the service
 export const dbService = getFirestore(app);
+
+// Initialize Cloud Storage and get a reference to the service
+export const storageService = getStorage(app);

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AppRouter from "components/Router";
 import { authService } from "fbase";
 // firebase/auth https://firebase.google.com/docs/reference/js/auth.auth.md#authonauthstatechanged
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, updateProfile } from "firebase/auth";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -13,21 +13,42 @@ function App() {
     onAuthStateChanged(authService, (user) => {
       if (user) {
         setIsLoggedIn(true);
-        setUserObj(user);
+        setUserObj({
+          displayName: user.displayName,
+          uid: user.uid,
+          updateProfile: (args) =>
+            updateProfile(user, { displayName: user.displayName }),
+        });
       } else {
         setIsLoggedIn(false);
+        setUserObj(null);
       }
       setInit(true);
     });
   }, []);
+
+  const refreshUser = () => {
+    const user = authService.currentUser;
+    setUserObj({
+      displayName: user.displayName,
+      uid: user.uid,
+      updateProfile: (args) =>
+        updateProfile(user, { displayName: user.displayName }),
+    });
+  };
+
   return (
     <>
       {init ? (
-        <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />
+        <AppRouter
+          refreshUser={refreshUser}
+          isLoggedIn={isLoggedIn}
+          userObj={userObj}
+        />
       ) : (
         "Initializing"
       )}
-      <footer>&copy; {new Date().getFullYear()} Jwitter</footer>
+      {/* <footer>&copy; {new Date().getFullYear()} Jwitter</footer> */}
     </>
   );
 }
