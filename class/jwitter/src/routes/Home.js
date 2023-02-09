@@ -31,9 +31,9 @@ function Home({ userObj }) {
   }, []);
 
   return (
-    <>
+    <div className="container">
       <JweetFactory userObj={userObj} />
-      <div>
+      <div style={{ marginTop: 30 }}>
         {jweets.map((jweet) => {
           return (
             <Jweet
@@ -44,7 +44,7 @@ function Home({ userObj }) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 
